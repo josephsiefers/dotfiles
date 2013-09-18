@@ -1,0 +1,34 @@
+[user]
+	name = Joseph Siefers
+	email = joseph.siefers@gmail.com
+[core]
+	editor = subl -w
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+
+[alias]
+        ci = commit -a
+        co = checkout
+        st = status
+        br = branch
+        wdiff = diff --color-words
+        a = add
+        dt = difftool
+        c = commit -m
+        dfmp = diff --name-status master..prod
+        revert = co --
+        unstage = reset
+	r = checkout --
+	ss = stash save
+	mt = mergetool
+	ca = "config --global "
+	showaliases = config --get-regexp alias
+[color]
+	ui = true
