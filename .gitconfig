@@ -14,21 +14,47 @@
 	trustExitCode = true
 
 [alias]
-        ci = commit -a
-        co = checkout
-        st = status
-        br = branch
-        wdiff = diff --color-words
-        a = add
-        dt = difftool
-        c = commit -m
-        dfmp = diff --name-status master..prod
-        revert = co --
-        unstage = reset
+    co = checkout
+    st = status
+    br = branch
+    a = add
+    dt = difftool
+    c = commit -m
+    revert = co --
 	r = checkout --
 	ss = stash save
+	sa = stash apply
+	sl = stash list
+	sd = stash drop
 	mt = mergetool
-	ca = "config --global "
+	aa = add --all
+	pff = pull --ff-only
+	pom = push origin master
+	amend = commit --amend
+	dh1 = diff HEAD~1
 	showaliases = config --get-regexp alias
+
+	#Divergence (commits we added and commits remote added)
+	div = divergence
+
+	# Goodness (summary of diff lines added/removed/total)
+	gn = goodness
+	gnc = goodness --cached
+
+	# Fancy logging.
+    #   h = head
+    #   hp = head with patch
+    #   rc = recent commits, only current branch
+    #   ra = recent commits, all reachable refs
+    #   l = all commits, only current branch
+    #   la = all commits, all reachable refs
+    head = !git l -1
+    h = !git head
+    hp = "!. ~/.githelpers && show_git_head"
+    rc = !git l -30
+    ra = !git rc --all
+    l = "!. ~/.githelpers && pretty_git_log"
+    la = !git l --all
+	
 [color]
 	ui = true
