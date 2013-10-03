@@ -19,14 +19,15 @@
     br = branch
     a = add
     dt = difftool
+    dc = diff --cached
     c = commit -m
-    revert = co --
-	r = checkout --
+	r = co --
 	ss = stash save
 	sa = stash apply
 	sl = stash list
 	sd = stash drop
 	mt = mergetool
+	rb = rebase
 	aa = add --all
 	pff = pull --ff-only
 	pom = push origin master
