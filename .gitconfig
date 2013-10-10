@@ -21,7 +21,7 @@
     dt = difftool
     dc = diff --cached
     c = commit -m
-	r = co --
+	r = checkout --
 	ss = stash save
 	sa = stash apply
 	sl = stash list
