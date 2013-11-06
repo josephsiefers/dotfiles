@@ -39,6 +39,8 @@
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
+
+	rh = reset --hard
 	
 	pff = pull --ff-only
 	pom = push origin master
