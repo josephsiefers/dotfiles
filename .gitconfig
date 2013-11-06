@@ -18,19 +18,28 @@
     st = status
     br = branch
     a = add
+    aa = add --all
+
+    #add all (and only) modified (git am is an actual command :S )
+    amm = add -u
+
+    #add all (and only) untracked
+    au = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
+
     dt = difftool
     dc = diff --cached
     c = commit -m
 	r = checkout --
 	ss = stash save
 	sa = stash apply
+	sp = stash pop
 	sl = stash list
 	sd = stash drop
 	mt = mergetool
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
-	aa = add --all
+	
 	pff = pull --ff-only
 	pom = push origin master
 	amend = commit --amend
