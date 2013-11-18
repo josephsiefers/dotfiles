@@ -20,11 +20,14 @@
     a = add
     aa = add --all
 
-    #add all (and only) modified (git am is an actual command :S )
-    amm = add -u
+    #add all modified files reviewing changes in each
+    aap = aa -p
+
+    #add all modified (git am is an actual command :S )
+    aam = add -u
 
     #add all (and only) untracked
-    au = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
+    aau = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
 
     dt = difftool
     dc = diff --cached
