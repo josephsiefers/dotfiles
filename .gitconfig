@@ -15,15 +15,18 @@
 
 [alias]
     co = checkout
+    cot = checkout --theirs
+    com = checkout --mine
+
     st = status
     br = branch
     a = add
     aa = add --all
 
-    #add all modified files reviewing changes in each
-    aap = aa -p
+    #add all modified files, reviewing changes in each
+    aap = add --all -p
 
-    #add all modified (git am is an actual command :S )
+    #add all modified (git am is an actual command :S ) without review
     aam = add -u
 
     #add all (and only) untracked
@@ -42,6 +45,9 @@
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
+
+	#view conflicted files
+	vc = diff --name-only --diff-filter=U
 
 	rh = reset --hard
 	
