@@ -57,7 +57,13 @@
 	dh1 = diff HEAD~1
 	showaliases = config --get-regexp alias
 	cdf = clean -df
-	cp = cherry-pick
+
+	#the -x makes sure that the sha1 of the original commit is inserted into the commit message
+	cp = cherry-pick -x --signoff
+	#to edit the commit message before cherry-picking
+	cpe = cherry-pick --edit
+	#for squashing cherry-picked commits
+	cpnc = cherry-pick --no-commit 
 
 	#Divergence (commits we added and commits remote added)
 	div = divergence
