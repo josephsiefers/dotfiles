@@ -16,7 +16,7 @@
 [alias]
     co = checkout
     cot = checkout --theirs
-    com = checkout --mine
+    coo = checkout --ours
 
     st = status
     br = branch
