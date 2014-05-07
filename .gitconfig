@@ -43,7 +43,11 @@
 	sp = stash pop
 	sl = stash list
 	sd = stash drop
+	
 	mt = mergetool
+	mm = merge master
+	mp = merge prod
+
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
