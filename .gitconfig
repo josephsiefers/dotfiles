@@ -44,6 +44,7 @@
 	sl = stash list
 	sd = stash drop
 	
+	m = merge
 	mt = mergetool
 	mm = merge master
 	mp = merge prod
