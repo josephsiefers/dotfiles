@@ -58,5 +58,38 @@ alias beg='bundle exec guard'
 
 alias up='cd ../'
 
-alias ssh-app='ssh deploy@ec2-54-81-205-234.compute-1.amazonaws.com'
-alias ssh-utility='ssh deploy@ec2-54-197-140-154.compute-1.amazonaws.com'
+alias ssh-app='ssh joesumzerocom@ec2-54-81-205-234.compute-1.amazonaws.com'
+alias ssh-utility='ssh joesumzerocom@ec2-54-197-140-154.compute-1.amazonaws.com'
+
+alias dpsa="docker ps -a"
+alias dps="docker ps"
+alias dr="docker run"
+alias drd="docker run -d"
+alias drp="docker run -P"
+alias dritrm='docker run -it --rm'
+alias drdp="docker run -dP"
+alias ds="docker stop"
+alias drm="docker rm"
+alias db='docker build'
+alias dl='docker log'
+alias di='docker images'
+alias dp='docker pull'
+
+alias beg='bundle exec guard'
+alias bbeg='BYEBUG=true bundle exec guard'
+alias rs='ASSET_COMPACT=true rails s'
+alias bbrs='ASSET_COMPACT=true BYEBUG=true rails s'
+
+$(boot2docker shellinit)
+
+alias dil='docker inspect -f "{{ .HostConfig.Links }}"'
+
+function drmc {
+	docker rm $(docker ps -a -q)
+}
+
+function drmi {
+	docker rmi $(docker images -q)
+}
+
+eval "$(direnv hook bash)"
