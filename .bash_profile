@@ -1,5 +1,4 @@
 export PATH=$PATH:~/bin/
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=/usr/local/sbin:$PATH
 
 function parse_git_branch { 
@@ -58,8 +57,9 @@ alias beg='bundle exec guard'
 
 alias up='cd ../'
 
-alias ssh-app='ssh joesumzerocom@ec2-54-81-205-234.compute-1.amazonaws.com'
-alias ssh-utility='ssh joesumzerocom@ec2-54-197-140-154.compute-1.amazonaws.com'
+alias ssh-app='ssh joesumzerocom@ec2-23-22-245-171.compute-1.amazonaws.com'
+alias ssh-utility='ssh joesumzerocom@ec2-54-160-182-189.compute-1.amazonaws.com'
+alias ssh-staging-app='ssh joesumzerocom@staging.sumzero.com'
 
 alias dpsa="docker ps -a"
 alias dps="docker ps"
@@ -71,16 +71,19 @@ alias drdp="docker run -dP"
 alias ds="docker stop"
 alias drm="docker rm"
 alias db='docker build'
-alias dl='docker log'
+alias dl='docker logs'
+alias dlf='docker logs -f'
 alias di='docker images'
 alias dp='docker pull'
+alias deit='docker exec -it'
+alias dcr='docker-compose run'
 
 alias beg='bundle exec guard'
 alias bbeg='BYEBUG=true bundle exec guard'
 alias rs='ASSET_COMPACT=true rails s'
 alias bbrs='ASSET_COMPACT=true BYEBUG=true rails s'
 
-$(boot2docker shellinit)
+eval $(docker-machine env default)
 
 alias dil='docker inspect -f "{{ .HostConfig.Links }}"'
 
@@ -88,8 +91,18 @@ function drmc {
 	docker rm $(docker ps -a -q)
 }
 
+function drmoc {
+	docker rmi $(docker images | grep "^<none>" | awk "{print $3}") 
+}
+
 function drmi {
 	docker rmi $(docker images -q)
 }
 
+function killrspec {
+	ps aux | grep [r]spec | awk '{print $2}' | xargs kill -9
+}
+
 eval "$(direnv hook bash)"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
