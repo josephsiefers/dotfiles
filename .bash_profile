@@ -57,9 +57,11 @@ alias beg='bundle exec guard'
 
 alias up='cd ../'
 
-alias ssh-app='ssh joesumzerocom@ec2-23-22-245-171.compute-1.amazonaws.com'
-alias ssh-utility='ssh joesumzerocom@ec2-54-160-182-189.compute-1.amazonaws.com'
-alias ssh-staging-app='ssh joesumzerocom@staging.sumzero.com'
+alias ssh-app1='ssh joesumzerocom@ec2-54-234-67-41.compute-1.amazonaws.com'
+alias ssh-app2='ssh joesumzerocom@ec2-54-91-143-166.compute-1.amazonaws.com'
+alias ssh-utility='ssh joesumzerocom@ec2-54-242-232-208.compute-1.amazonaws.com'
+alias ssh-services='ssh joesumzerocom@services.sumzero.com'
+alias ssh-staging='ssh joesumzerocom@staging.sumzero.com'
 
 alias dpsa="docker ps -a"
 alias dps="docker ps"
@@ -86,6 +88,9 @@ alias bbrs='ASSET_COMPACT=true BYEBUG=true rails s'
 eval $(docker-machine env default)
 
 alias dil='docker inspect -f "{{ .HostConfig.Links }}"'
+
+export EDM_SERVICE_MYSQL_PORT_3306_TCP_ADDR=sumzero-edm-service.c7j7sg0vbwxn.us-east-1.rds.amazonaws.com
+export EDM_SERVICE_MYSQL_ENV_MYSQL_ROOT_PASSWORD=QRHywHVSrxha
 
 function drmc {
 	docker rm $(docker ps -a -q)
