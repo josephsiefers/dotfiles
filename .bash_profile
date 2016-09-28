@@ -89,9 +89,6 @@ eval $(docker-machine env default)
 
 alias dil='docker inspect -f "{{ .HostConfig.Links }}"'
 
-export EDM_SERVICE_MYSQL_PORT_3306_TCP_ADDR=sumzero-edm-service.c7j7sg0vbwxn.us-east-1.rds.amazonaws.com
-export EDM_SERVICE_MYSQL_ENV_MYSQL_ROOT_PASSWORD=QRHywHVSrxha
-
 function drmc {
 	docker rm $(docker ps -a -q)
 }
