@@ -1,13 +1,19 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
+export MYSQL_PORT_3306_TCP_PORT=3306
+export MYSQL_ENV_MYSQL_ROOT_PASSWORD=test
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/gryphon1zer/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+DEFAULT_USER=gryphon1zer
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +57,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime rails ruby osx bundler vi-mode)
+plugins=(git sublime rails ruby osx bundler vi-mode zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 
 alias pp='python -mjson.tool'
 
@@ -156,12 +161,12 @@ alias di='docker images'
 alias dp='docker pull'
 alias deit='docker exec -it'
 alias dcr='docker-compose run'
+alias dcu='docker-compose up'
 
 alias beg='bundle exec guard'
 alias bbeg='BYEBUG=true bundle exec guard'
 alias rs='ASSET_COMPACT=true rails s'
 alias bbrs='ASSET_COMPACT=true BYEBUG=true rails s'
-
 
 function killrspec {
 	ps aux | grep [r]spec | awk '{print $2}' | xargs kill -9
@@ -179,4 +184,9 @@ function drmi {
 	docker rmi $(docker images -q)
 }
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
