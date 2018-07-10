@@ -16,6 +16,7 @@
 [alias]
     co = checkout
     com = checkout master
+    cor = checkout release
     cop = checkout prod
     cot = checkout --theirs
     coo = checkout --ours

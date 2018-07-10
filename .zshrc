@@ -100,6 +100,7 @@ alias cpdr='cap opswokrs_prod deploy:restart'
 #git
 alias gco='git co'
 alias gcom='git com'
+alias gcor='git cor'
 alias gcop='git cop'
 
 alias gst='git st'
@@ -139,12 +140,6 @@ alias beg='bundle exec guard'
 
 alias up='cd ../'
 
-alias ssh-app1='ssh joesumzerocom@ec2-54-234-67-41.compute-1.amazonaws.com'
-alias ssh-app2='ssh joesumzerocom@ec2-54-91-143-166.compute-1.amazonaws.com'
-alias ssh-utility='ssh joesumzerocom@ec2-54-242-232-208.compute-1.amazonaws.com'
-alias ssh-services='ssh joesumzerocom@services.sumzero.com'
-alias ssh-staging='ssh joesumzerocom@staging.sumzero.com'
-
 alias dpsa="docker ps -a"
 alias dps="docker ps"
 alias dr="docker run"
@@ -154,14 +149,19 @@ alias dritrm='docker run -it --rm'
 alias drdp="docker run -dP"
 alias ds="docker stop"
 alias drm="docker rm"
+alias drmi="docker rmi"
 alias db='docker build'
 alias dl='docker logs'
 alias dlf='docker logs -f'
-alias di='docker images'
+alias dis='docker images'
+alias di='docker image'
+alias dirm='docker image rm'
 alias dp='docker pull'
 alias deit='docker exec -it'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up'
+alias dcb='docker-compose build'
+alias dsp= 'docker system prune'
 
 alias beg='bundle exec guard'
 alias bbeg='BYEBUG=true bundle exec guard'
