@@ -93,9 +93,9 @@ source $ZSH/oh-my-zsh.sh
 alias pp='python -mjson.tool'
 
 #capistrano
-alias cpd='cap opsworks_prod deploy'
-alias cpdm='cap opsworks_prod deploy:migrations'
-alias cpdr='cap opswokrs_prod deploy:restart'
+alias cpd='cap production deploy'
+alias cpdm='cap production deploy:migrations'
+alias cpdr='cap production deploy:restart'
 
 #git
 alias gco='git co'
@@ -160,6 +160,7 @@ alias dp='docker pull'
 alias deit='docker exec -it'
 alias deitj='docker exec -it joinery'
 alias dcr='docker-compose run'
+alias dcrj='docker-compose run joinery'
 alias dcu='docker-compose up'
 alias dcuj='docker-compose up joinery'
 alias dcb='docker-compose build'
@@ -168,10 +169,6 @@ alias dsp='docker system prune'
 alias dnls='docker network ls'
 alias dni='docker network inspect'
 
-alias beg='bundle exec guard'
-alias bbeg='BYEBUG=true bundle exec guard'
-alias rs='ASSET_COMPACT=true rails s'
-alias bbrs='ASSET_COMPACT=true BYEBUG=true rails s'
 
 function killrspec {
 	ps aux | grep [r]spec | awk '{print $2}' | xargs kill -9
