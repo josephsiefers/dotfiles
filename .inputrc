@@ -1,3 +1,0 @@
-set editing-mode vi
-"\e[1;6D": backward-word
-"\e[1;6C": forward-word
