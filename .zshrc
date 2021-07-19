@@ -155,6 +155,19 @@ alias dsp='docker system prune'
 alias dnls='docker network ls'
 alias dni='docker network inspect'
 
+
+alias ports-up='sudo lsof -i -P | grep LISTEN'
+
+listening() {
+    if [ $# -eq 0 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P
+    elif [ $# -eq 1 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
+    else
+        echo "Usage: listening [pattern]"
+    fi
+}
+
 function killrspec {
 	ps aux | grep [r]spec | awk '{print $2}' | xargs kill -9
 }
