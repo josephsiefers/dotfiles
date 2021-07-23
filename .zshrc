@@ -91,6 +91,7 @@ alias gco='git co'
 alias gcom='git com'
 alias gcor='git cor'
 alias gcop='git cop'
+alias gcod='git cod'
 
 alias gst='git st'
 
