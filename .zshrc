@@ -157,6 +157,9 @@ alias dnls='docker network ls'
 alias dni='docker network inspect'
 
 
+alias ngroklocal='ngrok http http://localhost:3000'
+
+
 alias ports-up='sudo lsof -i -P | grep LISTEN'
 
 #https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x
