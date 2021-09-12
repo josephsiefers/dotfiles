@@ -85,6 +85,36 @@ if [ -x "$(command -v exa)" ]; then
     alias ls="exa"
     alias la="exa --long --all --group"
 fi
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias pp='python -mjson.tool'
 
 #git
 alias gco='git co'
@@ -94,6 +124,11 @@ alias gcop='git cop'
 alias gcod='git cod'
 
 alias gst='git st'
+
+alias gbrd='git brd'
+
+alias gt='git t'
+alias gtd='git td'
 
 alias ga='git a'
 alias gaa='git aa'
@@ -125,9 +160,6 @@ alias gcdf='git cdf'
 alias gmt='git mt'
 
 alias gcob='git co -b'
-
-alias be='bundle exec '
-alias beg='bundle exec guard'
 
 alias up='cd ../'
 
