@@ -2,15 +2,15 @@
 	name = Joseph Siefers
 	email = joseph.siefers@gmail.com
 [core]
-	editor = subl -w
+	editor = code --wait
 [diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
 	trustExitCode = true
 
 [alias]
