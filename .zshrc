@@ -188,6 +188,9 @@ alias dsp='docker system prune'
 alias dnls='docker network ls'
 alias dni='docker network inspect'
 
+function killorig() {
+    find . -name '*.orig' -delete
+}
 
 alias ngroklocal='ngrok http http://localhost:3000'
 
