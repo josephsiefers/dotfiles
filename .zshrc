@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions rails ruby osx bundler)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions rails ruby macos bundler)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -196,6 +196,9 @@ alias ngroklocal='ngrok http http://localhost:3000'
 
 
 alias ports-up='sudo lsof -i -P | grep LISTEN'
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias gitlost='git fsck --lost-found | grep "^dangling commit" | sed "s/^dangling commit //g" | xargs git show -s --oneline'
+alias rmorig="find . -name '*.orig' -delete"
 
 #https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x
 listening() {
