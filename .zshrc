@@ -220,6 +220,16 @@ listening() {
     fi
 }
 
+#https://stackoverflow.com/questions/3425340/how-can-i-capture-the-stdout-from-a-process-that-is-already-running
+capture() {
+    sudo dtrace -p "$1" -qn '
+        syscall::write*:entry
+        /pid == $target && arg0 == 1/ {
+            printf("%s", copyinstr(arg1, arg2));
+        }
+    '
+}
+
 function killrspec {
 	ps aux | grep [r]spec | awk '{print $2}' | xargs kill -9
 }
