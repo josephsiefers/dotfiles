@@ -181,12 +181,21 @@ alias di='docker image'
 alias dirm='docker image rm'
 alias dp='docker pull'
 alias deit='docker exec -it'
-alias dcr='docker-compose run'
-alias dcu='docker-compose up'
-alias dcb='docker-compose build'
+alias dcr='docker compose run'
+alias dcu='docker compose up -d'
+alias dcb='docker compose build'
 alias dsp='docker system prune'
+alias dvp='docker volume prune'
 alias dnls='docker network ls'
 alias dni='docker network inspect'
+
+#hasura
+alias hma='hasura migrate apply --database-name default'
+alias hmsq='hasura migrate squash --database-name default --from'
+alias hms='hasura migrate status --database-name default'
+alias hma='hasura migrate apply --database-name default --version'
+alias hmd='hasura migrate delete --database-name default --version'
+alias hmr='hasura migrate apply --database-name default --type down --version'
 
 function killorig() {
     find . -name '*.orig' -delete
