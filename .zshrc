@@ -191,6 +191,7 @@ alias dni='docker network inspect'
 
 #hasura
 alias hma='hasura migrate apply --database-name default'
+alias hmaa='hasura migrate apply --database-name default --up all'
 alias hmsq='hasura migrate squash --database-name default --from'
 alias hms='hasura migrate status --database-name default'
 alias hma='hasura migrate apply --database-name default --version'
