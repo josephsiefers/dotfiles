@@ -199,6 +199,11 @@ alias hma='hasura migrate apply --database-name default --version'
 alias hmd='hasura migrate delete --database-name default --version'
 alias hmr='hasura migrate apply --database-name default --type down --version'
 
+#android
+alias adbc='adb connect'
+alias adbt='adb tcpip 5555'
+alias adbd='adb devices'
+
 function killorig() {
     find . -name '*.orig' -delete
 }
