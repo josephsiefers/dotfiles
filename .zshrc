@@ -198,6 +198,10 @@ alias hms='hasura migrate status --database-name default'
 alias hma='hasura migrate apply --database-name default --version'
 alias hmd='hasura migrate delete --database-name default --version'
 alias hmr='hasura migrate apply --database-name default --type down --version'
+alias hmda='hasura metadata apply'
+alias hc='hasura console'
+alias hmaat='hasura migrate apply --database-name default --up all --endpoint http://localhost:8081'
+alias hmdat='hasura metadata apply --endpoint http://localhost:8081'
 
 #android
 alias adbc='adb connect'
