@@ -191,6 +191,7 @@ alias dnls='docker network ls'
 alias dni='docker network inspect'
 
 #hasura
+alias hm='hasura migrate apply --database-name default --up all && hasura metadata apply'
 alias hma='hasura migrate apply --database-name default'
 alias hmaa='hasura migrate apply --database-name default --up all'
 alias hmsq='hasura migrate squash --database-name default --from'
@@ -202,6 +203,8 @@ alias hmda='hasura metadata apply'
 alias hc='hasura console'
 alias hmaat='hasura migrate apply --database-name default --up all --endpoint http://localhost:8081'
 alias hmdat='hasura metadata apply --endpoint http://localhost:8081'
+alias hmst='hasura migrate status --database-name default --endpoint http://localhost:8081'
+alias hmt='hasura migrate apply --database-name default --up all --endpoint http://localhost:8081 && hasura metadata apply --endpoint http://localhost:8081 && hasura migrate status --database-name default --endpoint http://localhost:8081'
 
 #android
 alias adbc='adb connect'
