@@ -191,18 +191,24 @@ alias dnls='docker network ls'
 alias dni='docker network inspect'
 
 #hasura
+
 alias hm='hasura migrate apply --database-name default --up all && hasura metadata apply'
+alias hmc='hasura migrate create --database-name default'
 alias hma='hasura migrate apply --database-name default'
+alias hmaskip='hasura migrate apply --database-name default --skip-execution --version'
 alias hmaa='hasura migrate apply --database-name default --up all'
 alias hmsq='hasura migrate squash --database-name default --from'
 alias hms='hasura migrate status --database-name default'
 alias hma='hasura migrate apply --database-name default --version'
 alias hmd='hasura migrate delete --database-name default --version'
+alias hmdwn='hasura migrate apply --database-name default --down'
 alias hmr='hasura migrate apply --database-name default --type down --version'
 alias hmda='hasura metadata apply'
 alias hc='hasura console'
 alias hmaat='hasura migrate apply --database-name default --up all --endpoint http://localhost:8081'
+alias hmdwnt='hasura migrate apply --database-name default --down --endpoint http://localhost:8081'
 alias hmdat='hasura metadata apply --endpoint http://localhost:8081'
+alias hmaskipt='hasura migrate apply --skip-execution --endpoint http://localhost:8081 --version'
 alias hmst='hasura migrate status --database-name default --endpoint http://localhost:8081'
 alias hmt='hasura migrate apply --database-name default --up all --endpoint http://localhost:8081 && hasura metadata apply --endpoint http://localhost:8081 && hasura migrate status --database-name default --endpoint http://localhost:8081'
 
@@ -298,3 +304,6 @@ bindkey "^R" history-incremental-search-backward
 export PATH="$PATH:$HOME/.rvm/bin"
 
 eval "$(direnv hook zsh)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
